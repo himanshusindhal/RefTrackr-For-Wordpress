@@ -1,0 +1,1463 @@
+/**
+ * RefTrackr Admin Dashboard Styles
+ *
+ * Premium SaaS-style admin dashboard CSS.
+ * No remote assets, no CDN dependencies.
+ *
+ * @package RefTrackr
+ * @since   1.0.0
+ */
+
+/* ==========================================================================
+   1. CSS Custom Properties (Design Tokens)
+   ========================================================================== */
+
+:root {
+    --reftrackr-primary: #6C5CE7;
+    --reftrackr-primary-light: #A29BFE;
+    --reftrackr-primary-dark: #5A4BD1;
+    --reftrackr-primary-bg: rgba(108, 92, 231, 0.08);
+    --reftrackr-primary-gradient: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
+
+    --reftrackr-accent: #00D2D3;
+    --reftrackr-accent-light: #55E6C1;
+
+    --reftrackr-success: #00B894;
+    --reftrackr-success-bg: rgba(0, 184, 148, 0.1);
+    --reftrackr-warning: #FDCB6E;
+    --reftrackr-warning-bg: rgba(253, 203, 110, 0.15);
+    --reftrackr-danger: #FF6B6B;
+    --reftrackr-danger-bg: rgba(255, 107, 107, 0.1);
+    --reftrackr-info: #74B9FF;
+    --reftrackr-info-bg: rgba(116, 185, 255, 0.1);
+
+    --reftrackr-bg: #F8F9FD;
+    --reftrackr-surface: #FFFFFF;
+    --reftrackr-surface-hover: #F5F6FA;
+    --reftrackr-border: #E8ECF4;
+    --reftrackr-border-light: #F0F2F8;
+    --reftrackr-text-primary: #2D3436;
+    --reftrackr-text-secondary: #636E72;
+    --reftrackr-text-muted: #B2BEC3;
+
+    --reftrackr-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --reftrackr-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --reftrackr-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --reftrackr-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+    --reftrackr-radius: 12px;
+    --reftrackr-radius-sm: 8px;
+    --reftrackr-radius-lg: 16px;
+    --reftrackr-radius-pill: 50px;
+    --reftrackr-gap: 24px;
+    --reftrackr-gap-sm: 16px;
+
+    --reftrackr-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --reftrackr-font-mono: 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    --reftrackr-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --reftrackr-transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. Base / Reset (scoped to .reftrackr-wrap)
+   ========================================================================== */
+
+.reftrackr-wrap {
+    font-family: var(--reftrackr-font);
+    color: var(--reftrackr-text-primary);
+    background: var(--reftrackr-bg);
+    margin: 0 0 0 -20px;
+    padding: 32px 32px 48px;
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.reftrackr-wrap *,
+.reftrackr-wrap *::before,
+.reftrackr-wrap *::after {
+    box-sizing: border-box;
+}
+
+.reftrackr-wrap a {
+    color: var(--reftrackr-primary);
+    text-decoration: none;
+    transition: var(--reftrackr-transition);
+}
+
+.reftrackr-wrap a:hover {
+    color: var(--reftrackr-primary-dark);
+}
+
+.reftrackr-wrap code {
+    font-family: var(--reftrackr-font-mono);
+    font-size: 12px;
+    background: var(--reftrackr-primary-bg);
+    color: var(--reftrackr-primary);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.reftrackr-wrap .required {
+    color: var(--reftrackr-danger);
+}
+
+/* ==========================================================================
+   3. Page Header
+   ========================================================================== */
+
+.reftrackr-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--reftrackr-gap);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.reftrackr-page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--reftrackr-text-primary);
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.reftrackr-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.reftrackr-page-description {
+    color: var(--reftrackr-text-secondary);
+    font-size: 15px;
+    margin: -8px 0 24px;
+    line-height: 1.6;
+}
+
+/* Date filter buttons */
+.reftrackr-date-filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.reftrackr-date-btn {
+    background: #b2bec3 !important;
+    color: #ffffff !important;
+    border-color: #b2bec3 !important;
+}
+
+.reftrackr-date-btn:hover {
+    background: #636e72 !important;
+    border-color: #636e72 !important;
+}
+
+.reftrackr-date-btn.active {
+    background: var(--reftrackr-primary) !important;
+    color: #ffffff !important;
+    border-color: var(--reftrackr-primary) !important;
+}
+
+.reftrackr-custom-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 4px;
+}
+
+.reftrackr-custom-range span {
+    color: var(--reftrackr-text-muted);
+}
+
+/* ==========================================================================
+   4. Analytics Cards
+   ========================================================================== */
+
+.reftrackr-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--reftrackr-gap);
+    margin-bottom: var(--reftrackr-gap);
+}
+
+.reftrackr-cards--half {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.reftrackr-card {
+    background: var(--reftrackr-surface);
+    border-radius: var(--reftrackr-radius);
+    padding: 24px;
+    box-shadow: var(--reftrackr-shadow);
+    border: 1px solid var(--reftrackr-border-light);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: var(--reftrackr-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.reftrackr-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.reftrackr-card:nth-child(1)::before { background: var(--reftrackr-primary); }
+.reftrackr-card:nth-child(2)::before { background: var(--reftrackr-accent); }
+.reftrackr-card:nth-child(3)::before { background: var(--reftrackr-success); }
+.reftrackr-card:nth-child(4)::before { background: var(--reftrackr-warning); }
+
+.reftrackr-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--reftrackr-shadow-md);
+}
+
+.reftrackr-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--reftrackr-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.reftrackr-card-icon .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+}
+
+.reftrackr-card-icon--sales { background: var(--reftrackr-primary-gradient); }
+.reftrackr-card-icon--orders { background: linear-gradient(135deg, #00D2D3, #55E6C1); }
+.reftrackr-card-icon--influencers { background: linear-gradient(135deg, #00B894, #55E6C1); }
+.reftrackr-card-icon--product { background: linear-gradient(135deg, #FDCB6E, #F9CA24); }
+
+.reftrackr-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.reftrackr-card-value {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--reftrackr-text-primary);
+    line-height: 1.2;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.reftrackr-card-label {
+    font-size: 13px;
+    color: var(--reftrackr-text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.reftrackr-card-trend {
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 4px;
+    padding: 2px 6px;
+    border-radius: var(--reftrackr-radius-pill);
+}
+
+.reftrackr-card-trend--up {
+    color: var(--reftrackr-success);
+    background: var(--reftrackr-success-bg);
+}
+
+.reftrackr-card-trend--down {
+    color: var(--reftrackr-danger);
+    background: var(--reftrackr-danger-bg);
+}
+
+/* ==========================================================================
+   5. Section Containers
+   ========================================================================== */
+
+.reftrackr-section {
+    background: var(--reftrackr-surface);
+    border-radius: var(--reftrackr-radius);
+    box-shadow: var(--reftrackr-shadow);
+    border: 1px solid var(--reftrackr-border-light);
+    margin-bottom: var(--reftrackr-gap);
+    overflow: hidden;
+}
+
+.reftrackr-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--reftrackr-border);
+}
+
+.reftrackr-section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--reftrackr-text-primary);
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   6. Data Tables
+   ========================================================================== */
+
+.reftrackr-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.reftrackr-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 14px;
+}
+
+.reftrackr-table thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--reftrackr-text-muted);
+    background: var(--reftrackr-bg);
+    border-bottom: 2px solid var(--reftrackr-border);
+    white-space: nowrap;
+}
+
+.reftrackr-table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--reftrackr-border-light);
+    color: var(--reftrackr-text-primary);
+    vertical-align: middle;
+}
+
+.reftrackr-table tbody tr {
+    transition: var(--reftrackr-transition);
+}
+
+.reftrackr-table tbody tr:hover {
+    background: var(--reftrackr-surface-hover);
+}
+
+.reftrackr-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Right-align numbers */
+.reftrackr-table td:nth-last-child(-n+3) {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   7. Badges
+   ========================================================================== */
+
+.reftrackr-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: var(--reftrackr-radius-pill);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.reftrackr-badge--active {
+    background: var(--reftrackr-success-bg);
+    color: var(--reftrackr-success);
+}
+
+.reftrackr-badge--paused {
+    background: var(--reftrackr-warning-bg);
+    color: #E17055;
+}
+
+.reftrackr-badge--completed {
+    background: var(--reftrackr-success-bg);
+    color: var(--reftrackr-success);
+}
+
+.reftrackr-badge--processing {
+    background: var(--reftrackr-info-bg);
+    color: #0984E3;
+}
+
+.reftrackr-badge--pending,
+.reftrackr-badge--on-hold {
+    background: var(--reftrackr-warning-bg);
+    color: #E17055;
+}
+
+.reftrackr-badge--cancelled,
+.reftrackr-badge--refunded,
+.reftrackr-badge--failed {
+    background: var(--reftrackr-danger-bg);
+    color: var(--reftrackr-danger);
+}
+
+.reftrackr-badge--coupon {
+    background: var(--reftrackr-primary-bg);
+    color: var(--reftrackr-primary);
+}
+
+.reftrackr-badge--referral {
+    background: rgba(0, 210, 211, 0.1);
+    color: #00A8A9;
+}
+
+.reftrackr-badge--coming-soon {
+    background: rgba(178, 190, 195, 0.15);
+    color: var(--reftrackr-text-muted);
+}
+
+/* ==========================================================================
+   8. Buttons
+   ========================================================================== */
+
+.reftrackr-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: var(--reftrackr-radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--reftrackr-font);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--reftrackr-transition);
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 1.4;
+    color: #ffffff !important;
+}
+
+.reftrackr-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.reftrackr-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--reftrackr-primary-bg);
+}
+
+.reftrackr-btn:active {
+    transform: scale(0.98);
+}
+
+.reftrackr-btn--primary {
+    background: var(--reftrackr-primary-gradient) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3) !important;
+}
+
+.reftrackr-btn--primary:hover {
+    background: linear-gradient(135deg, #5A4BD1 0%, #8B7FE8 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4) !important;
+    transform: translateY(-1px) !important;
+}
+
+.reftrackr-btn--secondary {
+    background: #636E72 !important;
+    color: #ffffff !important;
+    border-color: #636E72 !important;
+}
+
+.reftrackr-btn--secondary:hover {
+    background: #4b5257 !important;
+    color: #ffffff !important;
+    border-color: #4b5257 !important;
+}
+
+.reftrackr-btn--danger {
+    background: var(--reftrackr-danger) !important;
+    color: #ffffff !important;
+    border-color: var(--reftrackr-danger) !important;
+}
+
+.reftrackr-btn--danger:hover {
+    background: #ff5252 !important;
+    color: #ffffff !important;
+    border-color: #ff5252 !important;
+}
+
+.reftrackr-btn--sm {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+.reftrackr-btn--sm .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.reftrackr-btn--icon {
+    padding: 6px;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+/* ==========================================================================
+   9. Filters
+   ========================================================================== */
+
+.reftrackr-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--reftrackr-surface);
+    border-radius: var(--reftrackr-radius);
+    box-shadow: var(--reftrackr-shadow-sm);
+    border: 1px solid var(--reftrackr-border-light);
+    margin-bottom: var(--reftrackr-gap);
+}
+
+.reftrackr-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.reftrackr-filter-group--actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.reftrackr-filter-group--actions > div {
+    display: flex;
+    gap: 8px;
+}
+
+.reftrackr-filter-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--reftrackr-text-muted);
+}
+
+.reftrackr-filter-input,
+.reftrackr-filter-select {
+    padding: 8px 12px;
+    border: 1px solid var(--reftrackr-border);
+    border-radius: var(--reftrackr-radius-sm);
+    font-size: 13px;
+    font-family: var(--reftrackr-font);
+    color: var(--reftrackr-text-primary);
+    background: var(--reftrackr-surface);
+    min-width: 150px;
+    transition: var(--reftrackr-transition);
+}
+
+.reftrackr-filter-input:focus,
+.reftrackr-filter-select:focus {
+    outline: none;
+    border-color: var(--reftrackr-primary-light);
+    box-shadow: 0 0 0 3px var(--reftrackr-primary-bg);
+}
+
+/* ==========================================================================
+   10. Forms
+   ========================================================================== */
+
+.reftrackr-form {
+    max-width: 800px;
+    padding: 24px;
+}
+
+.reftrackr-form-group {
+    margin-bottom: 24px;
+}
+
+.reftrackr-form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--reftrackr-text-primary);
+    margin-bottom: 8px;
+}
+
+.reftrackr-form-input,
+.reftrackr-form-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--reftrackr-border);
+    border-radius: var(--reftrackr-radius-sm);
+    font-size: 14px;
+    font-family: var(--reftrackr-font);
+    color: var(--reftrackr-text-primary);
+    background: var(--reftrackr-surface);
+    transition: var(--reftrackr-transition);
+}
+
+.reftrackr-form-input:focus,
+.reftrackr-form-select:focus {
+    outline: none;
+    border-color: var(--reftrackr-primary);
+    box-shadow: 0 0 0 3px var(--reftrackr-primary-bg);
+}
+
+.reftrackr-form-input::placeholder {
+    color: var(--reftrackr-text-muted);
+}
+
+.reftrackr-form-help {
+    font-size: 12px;
+    color: var(--reftrackr-text-muted);
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+.reftrackr-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--reftrackr-gap);
+}
+
+.reftrackr-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--reftrackr-border);
+}
+
+/* ==========================================================================
+   11. Chart
+   ========================================================================== */
+
+.reftrackr-chart-container {
+    padding: 24px;
+}
+
+.reftrackr-chart-canvas {
+    position: relative;
+    width: 100%;
+}
+
+.reftrackr-chart-canvas canvas {
+    width: 100% !important;
+    max-height: 350px;
+}
+
+/* ==========================================================================
+   12. Empty States
+   ========================================================================== */
+
+.reftrackr-empty-state {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.reftrackr-empty-state-icon {
+    margin-bottom: 16px;
+}
+
+.reftrackr-empty-state-icon .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: var(--reftrackr-text-muted);
+    opacity: 0.5;
+}
+
+.reftrackr-empty-state-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--reftrackr-text-primary);
+    margin: 0 0 8px;
+}
+
+.reftrackr-empty-state-text {
+    font-size: 14px;
+    color: var(--reftrackr-text-secondary);
+    margin: 0 0 24px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+   13. Influencer Cell & Avatar
+   ========================================================================== */
+
+.reftrackr-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--reftrackr-border-light);
+}
+
+.reftrackr-influencer-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.reftrackr-influencer-cell div {
+    display: flex;
+    flex-direction: column;
+}
+
+.reftrackr-influencer-cell strong {
+    font-weight: 600;
+    color: var(--reftrackr-text-primary);
+    line-height: 1.3;
+}
+
+.reftrackr-influencer-cell small {
+    font-size: 12px;
+    color: var(--reftrackr-text-muted);
+}
+
+.reftrackr-actions-cell {
+    display: flex;
+    gap: 4px;
+}
+
+.reftrackr-ref-link {
+    font-size: 11px;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   14. Pagination
+   ========================================================================== */
+
+.reftrackr-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-top: 1px solid var(--reftrackr-border-light);
+}
+
+.reftrackr-pagination-info {
+    font-size: 13px;
+    color: var(--reftrackr-text-muted);
+}
+
+/* ==========================================================================
+   15. Notices
+   ========================================================================== */
+
+.reftrackr-notice {
+    padding: 14px 20px;
+    border-radius: var(--reftrackr-radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: reftrackr-slideDown 0.3s ease-out;
+}
+
+.reftrackr-notice--success {
+    background: var(--reftrackr-success-bg);
+    color: var(--reftrackr-success);
+    border: 1px solid rgba(0, 184, 148, 0.2);
+}
+
+.reftrackr-notice--error {
+    background: var(--reftrackr-danger-bg);
+    color: var(--reftrackr-danger);
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+@keyframes reftrackr-slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   16. Loading Spinner
+   ========================================================================== */
+
+.reftrackr-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--reftrackr-border);
+    border-top-color: var(--reftrackr-primary);
+    border-radius: 50%;
+    animation: reftrackr-spin 0.6s linear infinite;
+}
+
+.reftrackr-loading--lg {
+    width: 40px;
+    height: 40px;
+    border-width: 4px;
+}
+
+.reftrackr-loading-center {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+@keyframes reftrackr-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   17. Settings Page
+   ========================================================================== */
+
+.reftrackr-settings-section {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--reftrackr-border-light);
+}
+
+.reftrackr-settings-section:first-child {
+    padding-top: 0;
+}
+
+.reftrackr-settings-section:last-of-type {
+    border-bottom: none;
+}
+
+.reftrackr-settings-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--reftrackr-text-primary);
+    margin: 0 0 4px;
+}
+
+.reftrackr-settings-description {
+    font-size: 13px;
+    color: var(--reftrackr-text-muted);
+    margin: 0 0 20px;
+}
+
+/* Toggle Switch */
+.reftrackr-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.reftrackr-toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.reftrackr-toggle-slider {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--reftrackr-border);
+    border-radius: 12px;
+    transition: var(--reftrackr-transition);
+    flex-shrink: 0;
+}
+
+.reftrackr-toggle-slider::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: var(--reftrackr-transition);
+}
+
+.reftrackr-toggle input:checked + .reftrackr-toggle-slider {
+    background: var(--reftrackr-primary);
+}
+
+.reftrackr-toggle input:checked + .reftrackr-toggle-slider::after {
+    transform: translateX(20px);
+}
+
+.reftrackr-toggle input:focus + .reftrackr-toggle-slider {
+    box-shadow: 0 0 0 3px var(--reftrackr-primary-bg);
+}
+
+.reftrackr-toggle-label {
+    font-size: 14px;
+    color: var(--reftrackr-text-secondary);
+}
+
+/* ==========================================================================
+   18. Integration Cards
+   ========================================================================== */
+
+.reftrackr-integration-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--reftrackr-gap);
+    margin-bottom: var(--reftrackr-gap);
+}
+
+.reftrackr-integration-card {
+    background: var(--reftrackr-surface);
+    border: 1px solid var(--reftrackr-border-light);
+    border-radius: var(--reftrackr-radius);
+    padding: 28px;
+    text-align: center;
+    transition: var(--reftrackr-transition);
+    box-shadow: var(--reftrackr-shadow-sm);
+}
+
+.reftrackr-integration-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--reftrackr-shadow-md);
+}
+
+.reftrackr-integration-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--reftrackr-radius);
+    background: var(--reftrackr-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.reftrackr-integration-icon .dashicons {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    color: var(--reftrackr-text-muted);
+}
+
+.reftrackr-integration-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--reftrackr-text-primary);
+    margin: 0 0 8px;
+}
+
+.reftrackr-integration-description {
+    font-size: 13px;
+    color: var(--reftrackr-text-secondary);
+    margin: 0 0 16px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   19. Responsive
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .reftrackr-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .reftrackr-wrap {
+        padding: 20px 16px;
+        margin-left: -10px;
+    }
+
+    .reftrackr-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .reftrackr-cards--half {
+        grid-template-columns: 1fr;
+    }
+
+    .reftrackr-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reftrackr-page-title {
+        font-size: 22px;
+    }
+
+    .reftrackr-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .reftrackr-integration-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .reftrackr-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .reftrackr-filter-input,
+    .reftrackr-filter-select {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .reftrackr-date-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .reftrackr-custom-range {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .reftrackr-table {
+        font-size: 13px;
+    }
+
+    .reftrackr-table thead th,
+    .reftrackr-table tbody td {
+        padding: 10px 12px;
+    }
+
+    .reftrackr-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .reftrackr-pagination {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .reftrackr-wrap {
+        padding: 16px 12px;
+    }
+
+    .reftrackr-card {
+        padding: 16px;
+    }
+
+    .reftrackr-card-value {
+        font-size: 20px;
+    }
+
+    .reftrackr-empty-state {
+        padding: 40px 20px;
+    }
+
+    .reftrackr-form {
+        padding: 16px;
+    }
+
+    .reftrackr-form-actions {
+        flex-direction: column;
+    }
+
+    .reftrackr-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   21. Revamped Dashboard Layouts & Widgets
+   ========================================================================== */
+
+.reftrackr-dashboard-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--reftrackr-gap);
+    margin-bottom: var(--reftrackr-gap);
+}
+
+.reftrackr-dashboard-row--unequal {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: var(--reftrackr-gap);
+    margin-bottom: var(--reftrackr-gap);
+}
+
+.reftrackr-card {
+    padding: 20px 20px 64px 20px !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reftrackr-card-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+}
+
+.reftrackr-card-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 8px;
+    padding: 2px 8px;
+    border-radius: var(--reftrackr-radius-pill);
+}
+
+.reftrackr-card-trend--up {
+    color: #00b894;
+    background: var(--reftrackr-success-bg);
+}
+
+.reftrackr-card-trend--up small {
+    color: #636e72;
+    font-weight: 500;
+}
+
+.reftrackr-card-trend--units {
+    color: #e67e22;
+    background: rgba(230, 126, 34, 0.1);
+}
+
+.reftrackr-card-trend--units small {
+    color: #636e72;
+    font-weight: 500;
+}
+
+.reftrackr-card-value--text {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin-top: 2px;
+}
+
+.reftrackr-card-sparkline-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.reftrackr-card-sparkline-wrap canvas {
+    width: 100% !important;
+    height: 48px !important;
+}
+
+/* Avatar Initials */
+.reftrackr-avatar-initials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.reftrackr-avatar-initials--1 { background-color: #6c5ce7; } /* Purple */
+.reftrackr-avatar-initials--2 { background-color: #0984e3; } /* Blue */
+.reftrackr-avatar-initials--3 { background-color: #e17055; } /* Orange */
+.reftrackr-avatar-initials--4 { background-color: #00cec9; } /* Teal */
+.reftrackr-avatar-initials--5 { background-color: #2ecc71; } /* Green */
+
+/* Medals Rank Badges */
+.reftrackr-rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7f8c8d;
+    background: #f5f6fa;
+}
+
+.reftrackr-rank-badge--1 {
+    background: #ffeaa7;
+    color: #d35400;
+    box-shadow: 0 1px 4px rgba(211, 84, 0, 0.2);
+}
+
+.reftrackr-rank-badge--2 {
+    background: #f1f2f8;
+    color: #7f8c8d;
+    box-shadow: 0 1px 4px rgba(127, 140, 141, 0.2);
+}
+
+.reftrackr-rank-badge--3 {
+    background: #ffe3e3;
+    color: #c0392b;
+    box-shadow: 0 1px 4px rgba(192, 57, 43, 0.2);
+}
+
+/* Revenue and Order Links */
+.reftrackr-text-revenue {
+    color: var(--reftrackr-success);
+    font-weight: 600;
+}
+
+.reftrackr-order-link {
+    font-weight: 600;
+    color: var(--reftrackr-primary);
+}
+
+.reftrackr-order-link:hover {
+    text-decoration: underline;
+}
+
+.reftrackr-influencer-footer {
+    padding: 16px 24px;
+    text-align: center;
+    border-top: 1px solid var(--reftrackr-border-light);
+}
+
+.reftrackr-link-footer {
+    font-weight: 600;
+    color: var(--reftrackr-primary);
+    font-size: 13px;
+}
+
+.reftrackr-link-footer:hover {
+    text-decoration: underline;
+}
+
+/* Attribution via Badges */
+.reftrackr-badge--coupon {
+    background-color: rgba(108, 92, 231, 0.08);
+    color: #6c5ce7;
+    font-family: var(--reftrackr-font-mono);
+    font-size: 11px;
+}
+
+.reftrackr-badge--referral {
+    background-color: rgba(46, 204, 113, 0.08);
+    color: #27ae60;
+    font-family: var(--reftrackr-font-mono);
+    font-size: 11px;
+}
+
+.reftrackr-badge--influencer {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.reftrackr-badge--influencer-1 { background-color: rgba(108, 92, 231, 0.08); color: #6c5ce7; }
+.reftrackr-badge--influencer-2 { background-color: rgba(9, 132, 227, 0.08); color: #0984e3; }
+.reftrackr-badge--influencer-3 { background-color: rgba(225, 112, 85, 0.08); color: #e17055; }
+.reftrackr-badge--influencer-4 { background-color: rgba(0, 206, 201, 0.08); color: #00cec9; }
+.reftrackr-badge--influencer-5 { background-color: rgba(46, 204, 113, 0.08); color: #2ecc71; }
+
+/* Top Products Sidebar */
+.reftrackr-products-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.reftrackr-product-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--reftrackr-border-light);
+    transition: var(--reftrackr-transition);
+}
+
+.reftrackr-product-item:hover {
+    background: var(--reftrackr-surface-hover);
+}
+
+.reftrackr-product-item:last-child {
+    border-bottom: none;
+}
+
+.reftrackr-product-rank {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f5f6fa;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7f8c8d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.reftrackr-product-rank--1 { background: #ffeaa7; color: #d35400; }
+.reftrackr-product-rank--2 { background: #f1f2f8; color: #7f8c8d; }
+.reftrackr-product-rank--3 { background: #ffe3e3; color: #c0392b; }
+
+.reftrackr-product-img-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--reftrackr-radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--reftrackr-border);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.reftrackr-product-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reftrackr-product-thumbnail-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f6fa;
+    color: #b2bec3;
+}
+
+.reftrackr-product-thumbnail-fallback .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.reftrackr-product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.reftrackr-product-name {
+    font-weight: 600;
+    color: var(--reftrackr-text-primary);
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reftrackr-product-units {
+    font-size: 12px;
+    color: var(--reftrackr-text-muted);
+    margin-top: 2px;
+}
+
+.reftrackr-product-rev {
+    font-weight: 600;
+    color: var(--reftrackr-success);
+    font-size: 13px;
+}
+
+.reftrackr-empty-state-compact {
+    padding: 24px;
+    text-align: center;
+    color: var(--reftrackr-text-muted);
+}
+
+.reftrackr-chart-select {
+    padding: 6px 12px;
+    border: 1px solid var(--reftrackr-border);
+    border-radius: var(--reftrackr-radius-sm);
+    font-size: 13px;
+    font-family: var(--reftrackr-font);
+    color: var(--reftrackr-text-primary);
+    background: var(--reftrackr-surface);
+}
+
+@media (max-width: 992px) {
+    .reftrackr-dashboard-row,
+    .reftrackr-dashboard-row--unequal {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   20. Print Styles
+   ========================================================================== */
+
+@media print {
+    .reftrackr-wrap {
+        background: #fff;
+        padding: 0;
+        margin: 0;
+    }
+
+    .reftrackr-header-actions,
+    .reftrackr-filters,
+    .reftrackr-form-actions,
+    .reftrackr-actions-cell,
+    .reftrackr-pagination,
+    .reftrackr-btn {
+        display: none !important;
+    }
+
+    .reftrackr-card,
+    .reftrackr-section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+
+    .reftrackr-card:hover {
+        transform: none;
+    }
+}

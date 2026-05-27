@@ -1,0 +1,552 @@
+# Copyright (C) 2026 Himanshu Sindhal
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: RefTrackr 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/reftrackr\n"
+"POT-Creation-Date: 2026-05-27T00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/class-reftrackr-admin.php
+msgid "RefTrackr"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Dashboard"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Influencers"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Orders"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Coupons"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Referrals"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Reports"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Settings"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Integrations"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Last 7 Days"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Last 30 Days"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Custom"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Apply"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Total Sales"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Orders Tracked"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Active Influencers (%1$d / %2$d)"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Top Product"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "N/A"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Top Product — %d sold"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Sales Overview"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Top Influencers"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "View All"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Influencer"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Referral Slug"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Coupon"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Revenue"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Conv. Rate"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Status"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Recent Orders"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Order ID"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Product"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Amount"
+msgstr ""
+
+#: admin/partials/dashboard.php
+msgid "Date"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Add Influencer"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Search"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Search influencers..."
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "All"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Active"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Paused"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Referral Link"
+msgstr ""
+
+
+#: admin/partials/influencers.php
+msgid "Actions"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Edit"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Pause"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Activate"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Delete"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "No influencers yet"
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Add your first influencer to start tracking referrals and sales."
+msgstr ""
+
+#: admin/partials/influencers.php
+msgid "Add First Influencer"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Edit Influencer"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Add New Influencer"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Back to Influencers"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Name"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Email"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Instagram Handle"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Coupon Code"
+msgstr ""
+
+
+#: admin/partials/influencer-form.php
+msgid "Referral URL: %s"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Must match an existing WooCommerce coupon code."
+msgstr ""
+
+
+#: admin/partials/influencer-form.php
+msgid "Update Influencer"
+msgstr ""
+
+#: admin/partials/influencer-form.php
+msgid "Cancel"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Cookie Duration"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "1 Day"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "7 Days (Default)"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "14 Days"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "30 Days"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "60 Days"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "90 Days"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Referral Tracking"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Enable referral link tracking"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Coupon Attribution"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Enable coupon code attribution"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Currency Symbol Override"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Leave empty to use WooCommerce default."
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Date Format"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Save Settings"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Tracking Settings"
+msgstr ""
+
+#: admin/partials/settings.php
+msgid "Display Settings"
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "CSV Export"
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "Export your data to CSV files for analysis."
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "PDF Reports"
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "Generate professional PDF reports."
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "WhatsApp Notifications"
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "Send notifications via WhatsApp."
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "Slack Integration"
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "Send automated notifications to your team's Slack channel whenever a new influencer sale is tracked."
+msgstr ""
+
+#: admin/partials/integrations.php
+msgid "Coming Soon"
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Permission denied."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Name is required."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Referral slug is required."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "This referral slug is already taken."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Influencer added successfully!"
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Influencer updated successfully!"
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Influencer deleted successfully."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Status updated successfully."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Settings saved successfully!"
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Failed to add influencer."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Failed to update influencer."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Failed to delete influencer."
+msgstr ""
+
+#: admin/class-reftrackr-ajax.php
+msgid "Invalid influencer ID."
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Are you sure you want to delete this influencer? This action cannot be undone."
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Saving..."
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "Changes saved successfully!"
+msgstr ""
+
+#: admin/class-reftrackr-admin.php
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: reftrackr.php
+msgid "%1$s requires %2$s to be installed and active."
+msgstr ""
+
+#: admin/partials/orders.php
+msgid "City / State"
+msgstr ""
+
+#: admin/partials/orders.php
+msgid "Source"
+msgstr ""
+
+#: admin/partials/orders.php
+msgid "Coupon Used"
+msgstr ""
+
+#: admin/partials/orders.php
+msgid "No orders tracked yet"
+msgstr ""
+
+#: admin/partials/referrals.php
+msgid "Total Clicks"
+msgstr ""
+
+#: admin/partials/referrals.php
+msgid "Influencers with Clicks"
+msgstr ""
+
+#: admin/partials/referrals.php
+msgid "Device"
+msgstr ""
+
+#: admin/partials/referrals.php
+msgid "Referrer URL"
+msgstr ""
+
+#: admin/partials/referrals.php
+msgid "Date / Time"
+msgstr ""
+
+#: admin/partials/referrals.php
+msgid "Direct"
+msgstr ""
+
+#: admin/partials/referrals.php
+msgid "No referral clicks yet"
+msgstr ""
+
+#: admin/partials/reports.php
+msgid "Revenue by Influencer"
+msgstr ""
+
+#: admin/partials/reports.php
+msgid "Geographic Breakdown"
+msgstr ""
+
+#: admin/partials/reports.php
+msgid "Product Performance"
+msgstr ""
+
+#: admin/partials/reports.php
+msgid "City"
+msgstr ""
+
+#: admin/partials/reports.php
+msgid "State"
+msgstr ""
+
+#: admin/partials/reports.php
+msgid "Units Sold"
+msgstr ""
+
+#: admin/partials/coupons.php
+msgid "Coupon Analytics"
+msgstr ""
+
+#: admin/partials/coupons.php
+msgid "Linked Influencer"
+msgstr ""
+
+#: admin/partials/coupons.php
+msgid "Usage Count"
+msgstr ""
+
+#: admin/partials/coupons.php
+msgid "Total Revenue"
+msgstr ""
+
+#: admin/partials/coupons.php
+msgid "Revenue Per Use"
+msgstr ""
+
+#: admin/partials/coupons.php
+msgid "No coupon data yet"
+msgstr ""
+
+#: admin/partials/various
+msgid "Load More"
+msgstr ""
+
+#: admin/partials/various
+msgid "Showing %1$d of %2$d orders"
+msgstr ""
+
+#: admin/partials/various
+msgid "Reset"
+msgstr ""
+
+#: admin/partials/various
+msgid "From"
+msgstr ""
+
+#: admin/partials/various
+msgid "To"
+msgstr ""
+
+#: admin/partials/various
+msgid "All Influencers"
+msgstr ""
+
+#: admin/partials/various
+msgid "Coupon code"
+msgstr ""
